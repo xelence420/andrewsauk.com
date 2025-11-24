@@ -8,8 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentYear = new Date().getFullYear();
   yearSpan.textContent = currentYear;
 
-  // Add click behavior
+  // Start with the message hidden
+  message.style.display = "none";
+
+  // Toggle the message on each click
   button.addEventListener("click", () => {
-    message.textContent = "You clicked the button! 🎉";
+    if (message.style.display === "none") {
+      // Show the message
+      message.textContent = "You clicked the button! 🎉";
+      message.style.display = "block"; // p tags are block elements by default
+    } else {
+      // Hide the message
+      message.style.display = "none";
+    }
   });
 });
